@@ -51,7 +51,7 @@ steps:
 - task: Docker@2
   displayName: 'Push Docker Image to ACR'
   inputs:
-    containerRegistry: '2934f297-448d-4e94-81e6-71c661fa34ef'
+    containerRegistry: 'd5afdb59-f193-443f-8f0e-d7b77cb66ec4'
     repository: 'ml-model'
     command: 'push'
     tags: 'v.${{ parameters.model_version }}'
