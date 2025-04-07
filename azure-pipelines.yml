@@ -39,12 +39,12 @@ steps:
   enabled: 'true'
 
 - script: |
-    mlflow models generate-dockerfile -m "model_dir/model/" -d "mlflow_docker" --enable-mlserver
+    mlflow models generate-dockerfile -m "model_dir/model/" -d "ml-model" --enable-mlserver
   displayName: 'Create Dockerfile'
   enabled: 'true'
 
 - script: |
-    docker build -t "vewsandboxacr.azurecr.io/ml-model" mlflow_docker/
+    docker build -t "vewsandboxacr.azurecr.io/ml-model" ml-model/
   displayName: 'Create Docker Image'
   enabled: 'true'
 
@@ -54,5 +54,5 @@ steps:
     containerRegistry: 'vewsandboxacr'
     repository: 'ml-model'
     command: 'push'
-    tags: 'v.${{ parameters.model_version }}'
+    #tags: 'v.${{ parameters.model_version }}'
     
