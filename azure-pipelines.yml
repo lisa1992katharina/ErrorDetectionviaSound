@@ -52,7 +52,7 @@ steps:
   displayName: 'Push Docker Image to ACR'
   inputs:
     containerRegistry: 'vewsandboxacr'
-    repository: 'ml-model'
+    repository: 'ml-model:v.${{ parameters.model_version }}'
     command: 'push'
     tags: 'v.${{ parameters.model_version }}'
     
