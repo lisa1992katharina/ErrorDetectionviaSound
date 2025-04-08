@@ -44,7 +44,7 @@ steps:
   enabled: 'true'
 
 - script: |
-    docker build -t "ml-model" mlflow_docker/
+    docker build -t "ml-model:v.${{ parameters.run_id }}" mlflow_docker/
   displayName: 'Create Docker Image'
   enabled: 'true'
 
