@@ -44,7 +44,7 @@ steps:
   enabled: 'true'
 
 - script: |
-    docker build -t "vewsandboxacr.azurecr.io/ml-model:v.${{ parameters.model_version }}" mlflow_docker/
+    docker build -t "index.vewsandboxacr.azurecr.io/ml-model:v.${{ parameters.model_version }}" mlflow_docker/
   displayName: 'Create Docker Image'
   enabled: 'true'
 
